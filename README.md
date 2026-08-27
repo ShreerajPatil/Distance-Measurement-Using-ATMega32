@@ -45,18 +45,20 @@ Written in embedded C (AVR-GCC), the firmware:
 
 ## Files
 
-- `distance_measurer.c` — Main firmware source
-- `Images/schematic.png` — Circuit schematic (ATmega32, HC-SR04, LCD wiring)
+- `Code.md` — Main firmware source
+- `Images/Circuit.png` — Circuit schematic (ATmega32, HC-SR04, LCD wiring)
 
 ## Build & Flash
 
-Compile with AVR-GCC and flash using your programmer of choice (e.g. USBasp, AVRISP):
-
-```bash
-avr-gcc -mmcu=atmega32 -DF_CPU=1000000UL -Os -o distance_measurer.elf distance_measurer.c
-avr-objcopy -O ihex distance_measurer.elf distance_measurer.hex
-avrdude -c usbasp -p atmega32 -U flash:w:distance_measurer.hex
-```
+### Using Atmel Studio 
+1. Open **Atmel Studio** (or Microchip Studio) and create a new **GCC C++ Executable Project** for the **ATmega32** device.
+2. Copy the code from `Code.md` into your project's main source file, replacing the default template.
+3. Set the build configuration to **Release** (top toolbar dropdown) for optimized, deployable code.
+4. Build the project: **Build → Build Solution** (or press `F7`). This generates a `.hex` file inside `[your folder]/Release/`.
+5. Connect your programmer (e.g. USBasp, AVRISP mkII, STK500) to the ATmega32 board.
+6. Go to **Tools → Device Programming** (or click the programming icon), select your programmer and device (ATmega32), and under the **Memories** tab, browse to the generated `.hex` file.
+7. Click **Program** to flash the firmware onto the chip.
+8. Set the ATmega32 fuse bits for a **1 MHz internal RC oscillator** if not already configured (matches `F_CPU 1000000` in the code) — this is set under the **Fuses** tab in the same Device Programming window.
 
 ## Future Enhancements
 
