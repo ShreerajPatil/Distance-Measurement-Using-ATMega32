@@ -32,7 +32,7 @@ The system triggers the HC-SR04 ultrasonic sensor, measures the echo pulse width
 | HC-SR04 VCC        | +5V (Pin 1)  |
 | HC-SR04 GND        | GND (Pin 4)  |
 
-![Circuit Schematic](Images/schematic.png)
+![Circuit Schematic](Images/Circuit.png)
 
 ## Firmware
 
