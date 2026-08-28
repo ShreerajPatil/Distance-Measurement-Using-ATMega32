@@ -6,7 +6,7 @@ An ultrasonic distance measurement system built on the ATmega32 microcontroller,
 
 The system triggers the HC-SR04 ultrasonic sensor, measures the echo pulse width using a hardware timer and external interrupt, converts the pulse duration into a distance in centimeters, and displays the result live on a 16x2 character LCD.
 ## Working Video
-Download the video and run vlc media player you can see the working of the project.
+Download the video `Working.mp4` and run in vlc media player you can see the working of the project.
 
 ## How It Works
 
